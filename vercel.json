@@ -1,28 +1,27 @@
 {
-  "name": "razorpay-form-integration",
-  "version": "1.0.0",
-  
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
-  },
-  "keywords": [
-    "razorpay",
-    "payment",
-    "form",
-    "nodejs",
-    "express"
+  "version": 2,
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@vercel/node"
+    }
   ],
-  "author": "Kunal Kumar Pandit",
-  "license": "ISC",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
-    "express": "^4.19.2",
-    "razorpay": "^2.8.0"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.3"
-  }
+  "routes": [
+    {
+      "src": "/create-order",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/verify-payment", 
+      "dest": "/server.js"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/",
+      "dest": "/server.js"
+    }
+  ]
 }
