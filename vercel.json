@@ -1,7 +1,7 @@
 {
   "name": "razorpay-form-integration",
   "version": "1.0.0",
-  "description": "A simple HTML form integrated with Razorpay payment gateway",
+  //"description": "A simple HTML form integrated with Razorpay payment gateway",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
